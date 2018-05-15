@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--日期控件-->
+    <color name="background">#FFFFFF</color>
+    <color name="split_line">#298CCF</color>
+    <color name="text1">#298CCF</color>
+    <color name="titleblue">#298CCF</color>
+    <color name="white">#ffffffff</color>
+    <color name="graybackcolor">#ffffff</color>
+    <color name="line_grey">#f5f5f5</color>
+    <color name="graybackcolor2">#DADADA</color>
+    <color name="text2">#333333</color>
+    <color name="bgcolor">#f0f0f0</color>
+    <color name="color_2581ff">#2581ff</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_282d31">#282d31</color>
+    <color name="color_0033cc">#0033cc</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_000000">#000000</color>
+    <color name="ccc">#cccccc</color>
+    <color name="lightgray">#f2f2f2</color>
+    <color name="tabselect">#5AB0EB</color>
+    <drawable name="tab_normal">#5AB0EB</drawable>
+</resources>
