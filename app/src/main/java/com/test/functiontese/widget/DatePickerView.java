@@ -1,4 +1,4 @@
-package com.test.functiontese;
+package com.test.functiontese.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

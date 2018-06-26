@@ -1,4 +1,4 @@
-package com.test.functiontese;
+package com.test.functiontese.widget;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import com.test.functiontese.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
