@@ -9,13 +9,25 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40sp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/time"
         android:text="Hello World!" />
     <com.github.mikephil.charting.charts.BarChart
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/bar_chart"/>
+        android:id="@+id/bar_chart"
+        android:visibility="gone"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="身份证识别"
+        android:id="@+id/sb"/>
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter" />
 
 </LinearLayout>
