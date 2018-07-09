@@ -28,11 +28,11 @@ import com.test.functiontese.util.ImageFilter;
  */
 public class CameraActivity extends Activity implements View.OnClickListener {
     //中文字典表
-//    static final String TESSBASE_PATH = Environment.getExternalStorageDirectory() + "/tesseract";
-    static final String TESSBASE_PATH = Environment.getExternalStorageDirectory() + "/";
+    static final String TESSBASE_PATH = Environment.getExternalStorageDirectory() + "/tesseract";
+//    static final String TESSBASE_PATH = Environment.getExternalStorageDirectory() + "/";
 
     //识别语言英文
-    static final String DEFAULT_LANGUAGE = "eng";
+    static final String DEFAULT_LANGUAGE = "chi_sim";
     //中文
 //    static final String DEFAULT_LANGUAGE = "chi_sim";
     /**
@@ -175,6 +175,8 @@ public class CameraActivity extends Activity implements View.OnClickListener {
         bm = bm.copy(Bitmap.Config.ARGB_8888,true);
         TessBaseAPI baseAPI = new TessBaseAPI();
         baseAPI.init(TESSBASE_PATH, DEFAULT_LANGUAGE);
+//        baseAPI.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"); // 识别白名单
+//        baseAPI.setVariable(TessBaseAPI.VAR_CHAR_BLACKLIST, "!@#$%^&*()_+=-[]}{;:'\"\\|~`,./<>?"); // 识别黑名单
         baseAPI.setPageSegMode(TessBaseAPI.PageSegMode.PSM_AUTO);
 //        bm =  ImageFilter.gray2Binary(bm);// 图片二值化
 //        bm =  ImageFilter.grayScaleImage(bm);// 图片灰度
@@ -189,7 +191,7 @@ public class CameraActivity extends Activity implements View.OnClickListener {
 //            }
 //        }
 //        Log.e("===========>",str);
-
+//        content = str;
         baseAPI.clear();
         baseAPI.end();
         return content;

@@ -1,14 +1,17 @@
 package com.test.functiontese.util;
 
 import android.hardware.Camera;
+import android.text.TextUtils;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by gxj on 2018/2/8.
  */
 public class CamParaUtil {
-
+    private static Pattern pattern = Pattern.compile("\\d{17}[\\d|x]|\\d{15}");
     /**
      * 打开相机
      */
@@ -41,5 +44,22 @@ public class CamParaUtil {
             }
         }
         return bestSize;
+
+    }
+    public static String getTelNum(String sParam) {
+        if (TextUtils.isEmpty(sParam)) {
+            return "";
+        }
+
+        Matcher matcher = pattern.matcher(sParam);
+        StringBuilder bf = new StringBuilder();
+        while (matcher.find()) {
+            bf.append(matcher.group()).append(",");
+        }
+        int len = bf.length();
+        if (len > 0) {
+            bf.deleteCharAt(len - 1);
+        }
+        return bf.toString();
     }
 }

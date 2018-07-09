@@ -27,6 +27,27 @@ public class ImageFilter {
         c.drawBitmap(bmSrc, 0, 0, paint);
         return bmpGray;
     }
+    /**
+     * 图片灰度处理
+     *
+     * @return
+     */
+    public static Bitmap grayScale(Bitmap bitmap) {
+        int width, height;
+        height = bitmap.getHeight();
+        width = bitmap.getWidth();
+        Bitmap bmpGray = null;
+        bmpGray = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(bmpGray);
+        Paint paint = new Paint();
+        ColorMatrix cm = new ColorMatrix();
+        cm.setSaturation(0);
+        ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
+        paint.setColorFilter(f);
+        c.drawBitmap(bitmap, 0, 0, paint);
+
+        return bmpGray;
+    }
 
     // 图像灰度化
     public static Bitmap grayScaleImage(Bitmap src) {

@@ -19,6 +19,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.test.functiontese.camera.CameraActivity;
 import com.test.functiontese.tools.BarChartManager;
 import com.test.functiontese.tools.Utils;
+import com.test.functiontese.util.CamParaUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -116,22 +117,32 @@ public class MainActivity extends AppCompatActivity {
             if (data != null) {
                 String path = data.getStringExtra("result");
                 String text = data.getStringExtra("string");
+                time.setText(data.getStringExtra("string"));
+//                if (text.length()>18){
+//                    String ip = CamParaUtil.getTelNum(text);
+//                    System.out.print(ip);
+////
+//                    time.setText(data.getStringExtra("string").substring(text.length()-18,text.length()));
+//
+//                }else {
+//                    time.setText("扫描失败");
+//                }
+
 //                String name = text.substring(text.indexOf("姓名")+2,text.indexOf("性别"));
 //                String xb = text.substring(text.indexOf("性别")+2,text.indexOf("民族"));
 //                String mz = text.substring(text.indexOf("民族")+2,text.indexOf("出生"));
 ////                String cs = text.substring(text.indexOf("出生")+2,text.indexOf("住址"));
 //                String zz = text.substring(text.indexOf("住址")+2,text.indexOf("日")+1);
 //                String sfz = text.substring(text.indexOf("号码")+2,text.length());
-                Pattern pattern = Pattern.compile("[0-9]*");
-                Matcher isNum = pattern.matcher(data.getStringExtra("string").substring(text.length()-18,text.length()));
-                if (!isNum.matches()){
-                    //反的
-                    time.setText(data.getStringExtra("string").substring(0,18));
-
-                }else {
-                    time.setText(data.getStringExtra("string").substring(text.length()-18,text.length()));
-
-                }
+//                Pattern pattern = Pattern.compile("[0-9]*");
+//                Matcher isNum = pattern.matcher(data.getStringExtra("string").substring(text.length()-18,text.length()));
+//                if (!isNum.matches()){c
+//                    //反的
+//                    time.setText(data.getStringExtra("string").substring(0,18));
+//
+//                }else {
+//
+//                }
 
                 if (!TextUtils.isEmpty(path)) {
                     imageView.setImageBitmap(BitmapFactory.decodeFile(path));
